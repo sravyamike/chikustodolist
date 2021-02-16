@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TODOLIST</title>
+</head>
+<body>
+<input type="text" id="new-list-item">
+<button onclick="addItem()">Add Item</button>
+<script type="text/javascript">
+var listItems = ['shopping', 'painting', 'reading novels'];
+</script>
+<script type="text/javascript">
+function addItem()
+{
+var tempItem=document.getElementById("new-list-item").value;
+listItems.push(tempItem);
+displayList(tempItem);
+document.getElementById("new-list-item").value='';
+}
+</script>
+<div id="display">
+<h2>MY TODOLIST</h2>
+<ul>
+<script type="text/javascript">
+listItems.forEach(displayList);
+function displayList(item)
+{
+document.getElementById("display").innerHTML += "<li>"+item+"</li>"
+
+}
+</script>
+</ul>
+</div>
+</body>
+</html>
